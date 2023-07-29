@@ -10,11 +10,18 @@ let pathAnime = path.resolve(__dirname, "../database/anime.json");
 
 export const findAll = async (req, res) => {
     try {
-        let animes = await fs.readFile(pathAnime, 'utf-8')
-        console.log(animes)
-        res.status(200).json({ code: 200, message: "ok"});
+        let data = await fs.readFile(pathAnime, 'utf-8');
+        data = JSON.parse(data);
+        res.status(200)
+            .json(
+                { 
+                    code: 200, 
+                    message: "ok",
+                    animes: data.anime
+                });
         
     } catch (error) {
+        console.log(error)
         res.status(500).json({ code: 500, message: "Error al leer los datos solicitados de anime"});
     }
 }
