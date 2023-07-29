@@ -15,6 +15,10 @@ Iniciar en modo desarrollo
 ```
 npm run dev
 ```
+BASE DE DATOS
+```
+database/anime.json
+```
 
 ## ENPOINT
 Crear anime / createAnime
