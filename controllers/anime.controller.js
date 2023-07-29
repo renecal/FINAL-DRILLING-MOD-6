@@ -79,7 +79,7 @@ export const createAnime = async (req, res) => {
     res.status(201).json({
         code: 201,
         message: `Se ha creado con exito el anime con id ${nuevoAnime.id}`,
-        animal: nuevoAnime
+        anime: nuevoAnime
 });
   } catch (error) {
     console.log(error);
@@ -91,3 +91,39 @@ export const createAnime = async (req, res) => {
       });
   }
 };
+
+
+
+export const deleteAnime = async (req, res) => {
+    let id = req.params.id;
+    try {
+      let data = await fs.readFile(pathAnime, "utf-8");
+      data = JSON.parse(data);
+  
+      //findIndex  si no encuentra el elemento devuelve un -1
+
+    let index = data.anime.findIndex( anime => anime.id == id);
+    if(index <0){
+        return res.status(404).json({
+            code: 404,
+            message: "El anime que desea elminar no se encuentra en la BD",
+          });
+    }
+    let animeEliminado = data.anime.splice(index, 1);
+    await fs.writeFile(pathAnime, JSON.stringify(data, null, 2), "utf8");
+
+      res.status(200).json({
+        code: 200,
+        message: "Se ha eliminado el anime con exito",
+        anime: animeEliminado
+      });
+    } catch (error) {
+      console.log(error);
+      res
+        .status(500)
+        .json({
+          code: 500,
+          message: "Error al eliminar los datos solicitados de anime",
+        });
+    }
+  };
