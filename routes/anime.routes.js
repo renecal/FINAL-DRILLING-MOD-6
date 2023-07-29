@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { findAll, findByPk } from "../controllers/anime.controller.js";
+import { findAll, findByPk, createAnime } from "../controllers/anime.controller.js";
 const router = Router()
 
 // ejemplo bird de https://expressjs.com/en/guide/routing.html
@@ -11,5 +11,8 @@ router.get('/', findAll);
 
 //Obtener anime por id
 router.get('/:id', findByPk);
+
+// Crear anime
+router.post('/', createAnime);
 
 export default router
