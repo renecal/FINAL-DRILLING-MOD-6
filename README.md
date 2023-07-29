@@ -10,7 +10,6 @@ Crear un programa que permita hacer el CRUD completo de los datos.
 * Instalar dependencias:
 ```
 npm i
-npm run dev
 ```
 Iniciar en modo desarrollo
 ```
@@ -18,14 +17,13 @@ npm run dev
 ```
 
 ## ENPOINT
-
-Listar todos los animes / findAll
-```
-GET http://localhost:3000/api/v1/animes
-```
 Crear anime / createAnime
 ```
 POST http://localhost:3000/api/v1/animes
+```
+Listar todos los animes / findAll
+```
+GET http://localhost:3000/api/v1/animes
 ```
 Listar anime por id / findByPk
 ```
