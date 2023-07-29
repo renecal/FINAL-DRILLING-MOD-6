@@ -1,10 +1,15 @@
 import { Router } from 'express';
-import { findAll } from "../controllers/anime.controller.js";
+import { findAll, findByPk } from "../controllers/anime.controller.js";
 const router = Router()
 
 // ejemplo bird de https://expressjs.com/en/guide/routing.html
 
-// define the home page route
+// rutas anime
+
+//todos los animes
 router.get('/', findAll);
+
+//Obtener anime por id
+router.get('/:id', findByPk);
 
 export default router

@@ -25,3 +25,34 @@ export const findAll = async (req, res) => {
         res.status(500).json({ code: 500, message: "Error al leer los datos solicitados de anime"});
     }
 }
+
+
+export const findByPk = async (req, res) => {
+    let id = req.params.id;
+    try {
+        let data = await fs.readFile(pathAnime, 'utf-8');
+        data = JSON.parse(data);
+
+        let animeBuscado = data.anime.find( anime => anime.id == id);
+        if(!animeBuscado){
+            res.status(404)
+            .json(
+                { 
+                    code: 404, 
+                    message: "No existe el anime con el id "+id,
+                });
+        }
+ 
+        res.status(200)
+            .json(
+                { 
+                    code: 200, 
+                    message: "ok",
+                    anime: animeBuscado
+                });
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ code: 500, message: "Error al leer los datos solicitados de anime"});
+    }
+}
