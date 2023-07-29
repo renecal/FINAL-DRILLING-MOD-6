@@ -29,11 +29,11 @@ Listar anime por id / findByPk
 ```
 GET http://localhost:3000/api/v1/animes/[ID]
 ```
-Actualizar anime / updateByPk
+Actualizar anime / updateAnime
 ```
 PUT http://localhost:3000/api/v1/animes/[ID]
 ```
-Eliminar anime / deleteAnimeByPk
+Eliminar anime / deleteAnime
 ```
 DELETE http://localhost:3000/api/v1/animes/[ID]
 ```

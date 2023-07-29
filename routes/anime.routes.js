@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { findAll, findByPk, createAnime, deleteAnime } from "../controllers/anime.controller.js";
+import { findAll, findByPk, createAnime, deleteAnime, updateAnime } from "../controllers/anime.controller.js";
 const router = Router()
 
 // ejemplo bird de https://expressjs.com/en/guide/routing.html
@@ -17,5 +17,9 @@ router.post('/', createAnime);
 
 // Delete anime
 router.delete('/:id', deleteAnime);
+
+// Update anime
+router.put('/:id', updateAnime);
+
 
 export default router

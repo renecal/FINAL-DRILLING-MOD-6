@@ -127,3 +127,40 @@ export const deleteAnime = async (req, res) => {
         });
     }
   };
+
+  export const updateAnime = async (req, res) => {
+    let id = req.params.id;
+    try {
+
+      let data = await fs.readFile(pathAnime, "utf-8");
+      data = JSON.parse(data);
+      let { nombre, genero, anho, autor } = req.body;
+      let animeBuscado = data.anime.find((anime) => anime.id == id);
+      if (!animeBuscado) {
+        res.status(404).json({
+          code: 404,
+          message: "No existe el anime con el id " + id,
+        });
+      }
+      animeBuscado.nombre = nombre || animeBuscado.nombre;      
+      animeBuscado.genero = genero || animeBuscado.genero;     
+      animeBuscado.anho = anho || animeBuscado.anho;  
+      animeBuscado.autor = autor || animeBuscado.autor;
+      
+      await fs.writeFile(pathAnime, JSON.stringify(data, null, 2), "utf8");     
+  
+      res.status(201).json({
+          code: 201,
+          message: `Se ha actualizado con exito el anime con id ${animeBuscado.id}`,
+          anime: animeBuscado
+  });
+    } catch (error) {
+      console.log(error);
+      res
+        .status(500)
+        .json({
+          code: 500,
+          message: "Error al actualizar anime",
+        });
+    }
+  };
