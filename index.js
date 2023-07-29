@@ -1,4 +1,6 @@
 import express from "express";
+//importar rutas
+import animeRoutes from "./routes/anime.routes.js";
 
 const app = express();
 
@@ -8,6 +10,4 @@ app.listen(3000, () => {
 });
 
 //RUTAS - ENDPOINTS
-app.get("/", (req, res) => {
-	res.send("Pagina principal");
-})
+app.get("/api/v1/animes", animeRoutes)
