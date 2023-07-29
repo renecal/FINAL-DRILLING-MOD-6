@@ -1,39 +1,51 @@
 {
-    "anime": [
-          {
-            "id": 1,
-            "nombre": "Akira",
-            "genero": "Seinen",
-            "anho": "1988",
-            "autor": "Katsuhiro Otomo"
-          },
-          {
-            "id": 2,
-            "nombre": "Dragon Ball",
-            "genero": "Shonen",
-            "anho": "1986",
-            "autor": "Akira Toriyama"
-          },
-          {
-            "id": 3,
-            "nombre": "Sailor Moon",
-            "genero": "Shojo",
-            "anho": "1992",
-            "autor": "Naoko Takeuchi"
-          },
-          {
-            "id": 4,
-            "nombre": "Naruto",
-            "genero": "Shonen",
-            "anho": "2002",
-            "autor": "Masashi Kishimoto"
-          },
-          {
-            "id": 5,
-            "nombre": "Neon Genesis Evangelion",
-            "genero": "Mecha",
-            "anho": "1995",
-            "autor": "Yoshiyuki Sadamoto"
-          }
-      ]
-  }
+  "anime": [
+    {
+      "id": 1,
+      "nombre": "Akira",
+      "genero": "Seinen",
+      "anho": "1988",
+      "autor": "Katsuhiro Otomo"
+    },
+    {
+      "id": 2,
+      "nombre": "Dragon Ball",
+      "genero": "Shonen",
+      "anho": "1986",
+      "autor": "Akira Toriyama"
+    },
+    {
+      "id": 3,
+      "nombre": "Sailor Moon",
+      "genero": "Shojo",
+      "anho": "1992",
+      "autor": "Naoko Takeuchi"
+    },
+    {
+      "id": 4,
+      "nombre": "Naruto",
+      "genero": "Shonen",
+      "anho": "2002",
+      "autor": "Masashi Kishimoto"
+    },
+    {
+      "id": 5,
+      "nombre": "Neon Genesis Evangelion",
+      "genero": "Mecha",
+      "anho": "1995",
+      "autor": "Yoshiyuki Sadamoto"
+    },
+    {
+      "id": "544637",
+      "nombre": "Akira2",
+      "genero": "Seinen2",
+      "autor": "Katsuhiro Otomo3"
+    },
+    {
+      "id": "bf3682",
+      "nombre": "Akira2",
+      "genero": "Seinen2",
+      "autor": "Katsuhiro Otomo3"
+    }
+  ]
+}
