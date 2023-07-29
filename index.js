@@ -10,4 +10,4 @@ app.listen(3000, () => {
 });
 
 //RUTAS - ENDPOINTS
-app.get("/api/v1/animes", animeRoutes)
+app.use("/api/v1/animes", animeRoutes)
